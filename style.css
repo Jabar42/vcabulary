@@ -44,5 +44,11 @@ button:hover {
 /* Estilo específico para el campo miTexto */
 #miTexto {
     height: 150px; /* Altura suficiente para el texto largo */
-    resize: vertical; /* Permite al usuario ajustar la altura si lo desea */
+    width: 100%; /* Asegurando que ocupe todo el ancho del formulario */
+    resize: vertical; /* Permite al usuario ajustar la altura */
+    overflow: auto; /* Agrega una barra de desplazamiento si el texto es muy largo */
+    border: 1px solid #ddd;
+    padding: 10px; /* Algo de espacio dentro del textarea */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    font-size: 16px; /* Tamaño de fuente legible */
 }
