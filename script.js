@@ -1,8 +1,17 @@
 document.getElementById('miFormulario').addEventListener('submit', function(e) {
     e.preventDefault();
+
+    // Obtener el número de usuario y el texto del formulario
     var userNumber = document.getElementById('inputNumber').value;
-    var baseUrl = "https://wa.me/";
-    var text = "?text=Hola%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F";
-    var finalUrl = baseUrl + userNumber + text;
-    window.location.href = finalUrl;
+    var userText = document.getElementById('miTexto').value;
+
+    // Base del enlace de WhatsApp y codificación del texto para URL
+    var whatsappBase = "https://wa.me/";
+    var encodedText = encodeURIComponent(userText);
+
+    // Construir el enlace final
+    var finalUrl = whatsappBase + userNumber + "?text=" + encodedText;
+
+    // Redirigir al usuario a WhatsApp
+    window.open(finalUrl, '_blank');
 });
